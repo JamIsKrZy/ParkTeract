@@ -1,6 +1,5 @@
 package FunctionEtSystem;
 
-import java.awt.*;
 import java.io.IOException;
 
 
@@ -13,7 +12,7 @@ public class loadText {
 
 
     public void narrate(String line, boolean resetB4Text, boolean nextLine)throws InterruptedException, IOException{
-        if (resetB4Text == true){
+        if (resetB4Text){
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         }
 

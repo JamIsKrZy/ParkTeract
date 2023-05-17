@@ -1,6 +1,6 @@
 package Places;
 
-import java.io.IOException;
+
 public class Restroom extends InheritMethod{
     
     public Restroom(){
