@@ -14,6 +14,7 @@ public class Interact {
     loadStats stats = new loadStats();
     ContactPlayers talk = new ContactPlayers();
     carryMission Miss = new carryMission();
+    Inventory inv = new Inventory();
 
     
 
@@ -24,9 +25,12 @@ public class Interact {
 
     public void nowWhat1() throws InterruptedException, IOException{
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
         try (Scanner con = new Scanner(System.in)) {
 
             String action = " "; String[] Sec = new String[5]; int[] giveLvl = new int[5];
+
+            //TRIGGER EVENT
 
             stats.DisplayStats(true, true, false);
             System.out.println("[Mission: " + Miss.showMission()+ " - " + From + " ]");
@@ -35,24 +39,29 @@ public class Interact {
             switch (section) {
                 case 1:
                     render.Section1();
+                    say.LineBLine("Inventory: " +Arrays.toString(inv.showInv()));
                     System.out.println("Available: " + Arrays.toString(talk.S1));
                     break;
                 case 2:
                     render.Section2();
+                    say.LineBLine("Inventory: " +Arrays.toString(inv.showInv()));
                     System.out.println("Available: " + Arrays.toString(talk.S2));
                     break;
                 case 3:
                     render.Section3();
+                    say.LineBLine("Inventory: " +Arrays.toString(inv.showInv()));
                     System.out.println("Available: " + Arrays.toString(talk.S3));
                     break;
                 case 4:
                     render.Section4();
+                    say.LineBLine("Inventory: " +Arrays.toString(inv.showInv()));
                     System.out.println("Available: " + Arrays.toString(talk.S4));
                     break;
             }
 
-            say.narrate("([GoTo] - go to other section in the park)", false, true);
-            say.narrate("([MENU] - Setting)", false, true);
+
+            say.LineBLine("([GoTo] - go to other section in the park)");
+            say.LineBLine("([MENU] - Setting)");
             say.narrate("Select: ", false, false);
             action = con.next();
             action = action.toUpperCase();
@@ -202,17 +211,198 @@ public class Interact {
             case "MANIPULATE MISSION":
                 //SetMission to
                 //ClearMission
-                say.LineBLine("X=======================X");
-                say.LineBLine("\\      Set Mission      /");
-                say.LineBLine("/                       \\");
-                say.LineBLine("\\     [Pick Mission]    /");
-                say.LineBLine("/     [Clear Mission]    \\");
-                say.LineBLine("\\      Set Mission      /");
-                say.LineBLine("/                       \\");
+                String reply; boolean pass1=true; String done; String select;
 
+
+                do {
+                    do {
+                        //For making boolean into a message
+                        if (status){
+                            done = "Finish";
+                        } else {
+                            done = "Unfinished";
+                        }
+
+                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+                        say.LineBLine("X=======================X");
+                        say.LineBLine("\\      Set Mission      /");
+                        say.LineBLine("/                       \\");
+                        say.LineBLine("\\     [Pick Mission]    /");
+                        say.LineBLine("/     [Clear Mission]   \\");
+                        say.LineBLine("\\       [Set Status]    /");
+                        say.LineBLine("/                       \\");
+                        say.LineBLine("\\                       /");
+                        say.LineBLine("/         {BACK}        \\");
+                        say.LineBLine("X=======================X");
+                        System.out.println("[Mission: " + Miss.showMission()+ " - " + From + " ]");
+                        System.out.println("[Details: " + to_Do + " ]");
+
+
+                        System.out.println("[Status: " + done + "]");
+
+
+                        System.out.print("\nSelect: ");
+                        reply = con.nextLine();
+
+                        reply = reply.toUpperCase();
+
+                        if (reply.equalsIgnoreCase("Pick Mission")) {
+                            pass1 = false;
+                        } else if (reply.equalsIgnoreCase("Clear Mission")) {
+                            pass1 = false;
+                        } else if (reply.equalsIgnoreCase("Set status")) {
+                            pass1 = false;
+                        } else if (reply.equalsIgnoreCase("Back")) {
+                            pass1 = false;
+                        }
+
+                    } while (pass1);
+
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+                    // Display all Mission list +++
+                    if (reply.equalsIgnoreCase("Back")){
+                        break;
+                    }
+
+                    System.out.println("    " + ListofMission[0][0] + "\t\t     " + ListofMission[0][1]);
+                    System.out.println(ListofMission[1][0] + "\t\t" + ListofMission[1][1]);
+                    System.out.println(ListofMission[2][0] + "\t\t" + ListofMission[2][1]);
+                    System.out.println(ListofMission[3][0] + "\t\t" + ListofMission[3][1]);
+                    System.out.println(ListofMission[4][0] + "\t\t" + ListofMission[4][1]);
+                    System.out.println(ListofMission[5][0] + "\t\t" + ListofMission[5][1]);
+
+                    System.out.println();
+
+                    System.out.println("     " + ListofMission[0][2] + "\t\t     " + ListofMission[0][3]);
+                    System.out.println(ListofMission[1][2] + "\t\t" + ListofMission[1][3]);
+                    System.out.println(ListofMission[2][2] + "\t\t" + ListofMission[2][3]);
+                    System.out.println(ListofMission[3][2] + "\t\t" + ListofMission[3][3]);
+                    System.out.println(ListofMission[4][2] + "\t\t\t" + ListofMission[4][3]);
+                    System.out.println(ListofMission[5][2] + "\t\t" + ListofMission[5][3]);
+
+                    System.out.println();
+
+                    System.out.println("     " + ListofMission[0][4] + "\t\t     " + ListofMission[0][5]);
+                    System.out.println(ListofMission[1][4] + "\t\t" + ListofMission[1][5]);
+                    System.out.println(ListofMission[2][4] + "\t\t" + ListofMission[2][5]);
+                    System.out.println(ListofMission[3][4] + "\t\t" + ListofMission[3][5]);
+                    System.out.println(ListofMission[4][4] + "\t\t" + ListofMission[4][5]);
+                    System.out.println(ListofMission[5][4] + "\t\t" + ListofMission[5][5]);
+
+                    System.out.println();
+
+                    System.out.println("     " + ListofMission[0][6] );
+                    System.out.println(ListofMission[1][6] );
+                    System.out.println(ListofMission[2][6] );
+                    System.out.println(ListofMission[3][6] );
+                    System.out.println(ListofMission[4][6] );
+                    System.out.println(ListofMission[5][6] );
+
+
+                    System.out.println("[Mission: " + Miss.showMission()+ " - " + From + " ]");
+                    System.out.println("[Details: " + to_Do + " ]");
+                    System.out.println("[Status: " + done);
+
+
+
+                    if (reply.equalsIgnoreCase("Pick Mission")) {
+
+                        System.out.println();
+                        System.out.print("Pick Mission: ");
+                        select = con.nextLine();
+
+                        setMission(select);
+
+
+                    } else if (reply.equalsIgnoreCase("Clear Mission")) {
+
+                        System.out.println();
+                        System.out.print("Do you wish to clear the Mission? [Y/N] ");
+                        select = con.nextLine();
+
+                        if (select.equalsIgnoreCase("y")) {
+                            clearMission();
+                        }
+
+
+                    } else if (reply.equalsIgnoreCase("Set Status")) {
+
+                        System.out.println();
+
+                        boolean error=true;
+                        do {
+                            System.out.print("Set Finish or Unfinished Status: ");
+                            select = con.nextLine();
+
+                            if (select.equalsIgnoreCase("Finish")) {
+                                error = false;
+                                status = true;
+                            } else if (select.equalsIgnoreCase("Unfinished")) {
+                                error = false;
+                                status = false;
+                            }
+
+                        } while(error);
+                    }
+
+
+                } while (!reply.equalsIgnoreCase("Back"));
+
+                Reset(3);
             break;
 
+
             case "SET INVENTORY":
+                String reply1; boolean pass = true;
+                do {
+                    do {
+                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+                        say.LineBLine("X=======================X");
+                        say.LineBLine("\\     Set Inventory     /");
+                        say.LineBLine("/                       \\");
+                        say.LineBLine("\\       [Add Item]      /");
+                        say.LineBLine("/      [Remove Item]    \\");
+                        say.LineBLine("\\                       /");
+                        say.LineBLine("/         {BACK}        \\");
+                        say.LineBLine("X=======================X");
+                        System.out.println(Arrays.toString(inv.showInv()));
+
+
+                        System.out.print("Select: ");
+                        reply1 = con.nextLine();
+
+                        reply1 = reply1.toUpperCase();
+
+                        if (reply1.equalsIgnoreCase("add item")) {
+                            pass = false;
+                        } else if (reply1.equalsIgnoreCase("remove item")) {
+                            pass = false;
+                        } else if (reply1.equalsIgnoreCase("back")) {
+                            pass = false;
+                        }
+
+                    } while (pass);
+
+                    String Item;
+                    if (reply1.equalsIgnoreCase("add item")) {
+
+                        System.out.print("Enter name of Item to add: ");
+                        Item = con.nextLine();
+
+                        inv.add(Item);
+                    } else if (reply1.equalsIgnoreCase("remove item")) {
+
+                        System.out.print("Enter Name of Item to remove: ");
+                        Item = con.nextLine();
+
+                        inv.remove(Item, true);
+                    }
+                } while (!reply1.equalsIgnoreCase("BACK"));
+
+                Reset(3);
 
             break;
 
@@ -221,11 +411,9 @@ public class Interact {
             case "GET SAVECODE":
                 String ingon = stats.SaveCode();
                 say.narrate("[ " + ingon + " ]", false, false);
-                say.narrate("5....", 750, false, false);
-                say.narrate("4....", 750, false, false);
-                say.narrate("3....", 750, false, false);
-                say.narrate("2....", 750, false, false);
-                say.narrate("1....", 750, false, false);
+                System.out.println("[Click Enter]");
+                con.nextLine();
+
                 Problem1(4);
             break;
 
@@ -234,8 +422,5 @@ public class Interact {
         }
             
         con.close();
-        
-        
-
     }
 }

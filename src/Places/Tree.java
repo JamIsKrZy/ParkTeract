@@ -11,7 +11,7 @@ public class Tree extends InheritMethod {
     loadStats stats = new loadStats();
     loadText say = new loadText();
     Inventory inv = new Inventory();
-    carryMission Miss = new carryMission();
+    carryMission job = new carryMission();
 
     String[] Action = {"Nap", "Climb", "Dig", "Bury"};
     public Tree() throws InterruptedException {
@@ -20,8 +20,12 @@ public class Tree extends InheritMethod {
 
     @Override
     public void choicePicker(int Lvl) throws InterruptedException, IOException {
-        image1();
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+        this.image1();
+
         String choice = availAction(Lvl);
+        choice = choice.toUpperCase();
 
         switch (choice){
             case "NAP" -> {
@@ -48,16 +52,17 @@ public class Tree extends InheritMethod {
             redo = false;
 
             System.out.print("Option: ");
-            if (lvl >= 0) {
+
+            if (lvl >= 0) { //nap
                 System.out.print("[" + Action[0] + "], ");
 
-                if (lvl >= 1) {
+                if (lvl >= 1) { //climb
                     System.out.print("[" + Action[1] + "], ");
 
-                    if (inv.lookingForItem("Shovel")) {
+                    if (inv.lookingForItem("Shovel")) { //if player has shovel
                         System.out.print("[" + Action[2] + "], ");
 
-                        if ("buryTheDead".equalsIgnoreCase(Miss.showMission())) {
+                        if ("buryTheDead".equalsIgnoreCase(job.showMission())) { // bury
                             System.out.print("[" + Action[3] + "], ");
                         }
                     }
@@ -65,7 +70,6 @@ public class Tree extends InheritMethod {
 
             }
 
-            //SAY something
             System.out.println();
             System.out.println("[SELECT]");
             String choice = con.nextLine();
@@ -101,18 +105,6 @@ public class Tree extends InheritMethod {
         System.out.println("..............|....|.....|......\\..........................");
     }
 
-    private void Lvl0() throws IOException, InterruptedException {
-
-        System.out.println("Kelf staring at the tree in thought:");
-        System.out.println("OPTION: [Nap]");
-        System.out.print("Select: ");
-        String act = con.next();
-
-
-        if (act.equalsIgnoreCase("Nap")){
-            stats.setTime(2,true);
-        }
-    }
 
 
     @Override
@@ -153,7 +145,15 @@ public class Tree extends InheritMethod {
     }
 
     @Override
-    protected void Choice3() {
+    protected void Choice3() throws IOException, InterruptedException {
+        say.narrate("Kelf is Climbing the tree", 500, true, false);
+        say.narrate(".", 500, false, false);
+        say.narrate(".", 500, false, false);
+        say.narrate(".", 500, false, false);
+
+        int happen = (int) ((Math.random()*20)+1);
+
+
 
     }
 

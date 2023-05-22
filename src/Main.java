@@ -221,7 +221,7 @@ public class Main {
     }
 
     private static void checkJavaVersion() throws IOException, InterruptedException {
-        String requiredVersion = "20.0.01"; // Minimum required version
+        String requiredVersion = "17.0.7"; // Minimum required version
         String installedVersion = System.getProperty("java.version");
 
         System.out.println("\nInstalled Java version: " + installedVersion);

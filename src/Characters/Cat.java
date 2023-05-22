@@ -9,6 +9,11 @@ public class Cat extends InheritMethod{
 
 
     @Override
+    int availAction(int lvl) throws IOException, InterruptedException {
+        return 0;
+    }
+
+    @Override
     void Lvl0() {
 
     }

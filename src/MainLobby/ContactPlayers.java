@@ -12,13 +12,13 @@ public class ContactPlayers {
 
     public String[] S1 = {"TREE", "OLDMAN", "BENCH", "DOG"};
     public String[] S2 = {"BOYS", "BENCH", "LUCKYBOX", "GARDEN"};
-    public String[] S3 = {"PLAYGROUND", "WOMAN", "GAURD", "WORKER", "PICNIC"};
+    public String[] S3 = {"PLAYGROUND", "WOMAN", "GUARD", "WORKER", "PICNIC"};
     public String[] S4 = {"VENDINGMACHINE", "CAT", "FOODSTALL", "CLUBHOUSE", "RESTROOM"};
 
-    // Character avaibility to interact
+    // Character availability to interact
     Boolean[] A1 = {true, true, false, false};
-    Boolean[] A2 = {false, false, false, false};
-    Boolean[] A3 = {false, false, false, false, false};
+    Boolean[] A2 = {false, false, false, true};
+    Boolean[] A3 = {false, false, false, true, false};
     Boolean[] A4 = {false, false, false, false, true};
     
     
@@ -37,9 +37,7 @@ public class ContactPlayers {
                             break;
                         }
                         Tree puno = new Tree();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        puno.availAction(lvl);
+                        puno.choicePicker(lvl);
                     break;
 
                     case "OLDMAN":
@@ -49,8 +47,6 @@ public class ContactPlayers {
                         }
 
                         Oldman tiguwang = new Oldman();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         tiguwang.checkLvl(lvl);
 
                     break;
@@ -61,8 +57,6 @@ public class ContactPlayers {
                             break;
                         }
                         Bench sit = new Bench();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         sit.availAction(lvl);
 
                     break;
@@ -73,8 +67,6 @@ public class ContactPlayers {
                             break;
                         }
                         Dog aso = new Dog();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         aso.checkLvl(lvl);
 
                     break;
@@ -88,8 +80,6 @@ public class ContactPlayers {
                             break;
                         }
                         Boys lalake = new Boys();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         lalake.checkLvl(lvl);
                     break;
 
@@ -99,9 +89,7 @@ public class ContactPlayers {
                             break;
                         }
                         Bench sit = new Bench();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        sit.availAction(lvl);
+                        sit.choicePicker(lvl);
                     break;
 
                     case "LUCKYBOX":
@@ -110,9 +98,7 @@ public class ContactPlayers {
                             break;
                         }
                         LuckyBox box = new LuckyBox();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        box.availAction(lvl);
+                        box.choicePicker(lvl);
                     break;
 
                     case "GARDEN":
@@ -121,9 +107,7 @@ public class ContactPlayers {
                             break;
                         }
                         Garden flower = new Garden();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        flower.availAction(lvl);
+                        flower.choicePicker(lvl);
                     break;
                 
                 }
@@ -137,9 +121,7 @@ public class ContactPlayers {
                             break;
                         }
                         PlayGround fun = new PlayGround();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        fun.availAction(lvl);
+                        fun.choicePicker(lvl);
 
                     break;
 
@@ -149,8 +131,6 @@ public class ContactPlayers {
                             break;
                         }
                         Woman girl = new Woman();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         girl.checkLvl(lvl);
 
                     break;
@@ -161,8 +141,6 @@ public class ContactPlayers {
                             break;
                         }
                         Guard police = new Guard();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         police.checkLvl(lvl);
 
                     break;
@@ -173,8 +151,6 @@ public class ContactPlayers {
                             break;
                         }
                         Worker work = new Worker();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         work.checkLvl(lvl);
 
                     break;
@@ -185,9 +161,7 @@ public class ContactPlayers {
                             break;
                         }
                         Picnic chill = new Picnic();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        chill.availAction(lvl);
+                        chill.choicePicker(lvl);
                     break;
                 
                 }
@@ -201,9 +175,7 @@ public class ContactPlayers {
                             break;
                         }
                         VendingMachine palit = new VendingMachine();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        palit.availAction(lvl);
+                        palit.choicePicker(lvl);
                     
                     break;
 
@@ -213,8 +185,6 @@ public class ContactPlayers {
                             break;
                         }
                         Cat pusa = new Cat();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
                         pusa.checkLvl(lvl);
 
                     break;
@@ -225,9 +195,7 @@ public class ContactPlayers {
                             break;
                         }
                         FoodStall kaon = new FoodStall();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        kaon.availAction(lvl);
+                        kaon.choicePicker(lvl);
 
                     break;
 
@@ -237,9 +205,7 @@ public class ContactPlayers {
                             break;
                         }
                         ClubHouse club = new ClubHouse();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        club.availAction(lvl);
+                        club.choicePicker(lvl);
 
                     break;
 
@@ -249,9 +215,7 @@ public class ContactPlayers {
                             break;
                         }
                         Restroom cr = new Restroom();
-                        System.out.println(Player + lvl);
-                        Thread.sleep(500);
-                        cr.availAction(lvl);
+                        cr.choicePicker(lvl);
 
                     break;
             

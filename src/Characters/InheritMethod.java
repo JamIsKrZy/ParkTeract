@@ -16,6 +16,8 @@ public abstract class InheritMethod {
         }
     }
 
+    abstract int availAction(int lvl) throws IOException, InterruptedException;
+
     abstract void Lvl0() throws IOException, InterruptedException;
     abstract void Lvl1() throws IOException, InterruptedException;
     abstract void Lvl2() throws IOException, InterruptedException;

@@ -4,18 +4,24 @@ import FunctionEtSystem.*;
 import java.io.IOException;
 import java.util.Scanner;
 
-
-import static FunctionEtSystem.carryMission.missionComplete;
-import static FunctionEtSystem.carryMission.setMission;
+import static FunctionEtSystem.carryMission.*;
 import static FunctionEtSystem.loadStats.*;
 
 public class Oldman extends InheritMethod{
     loadText say = new loadText();
     Scanner scan = new Scanner(System.in);
     Inventory inv = new Inventory();
+    carryMission job = new carryMission();
 
     public Oldman(){
 
+    }
+
+
+
+    @Override
+    int availAction(int lvl) throws IOException, InterruptedException {
+        return 0;
     }
 
     @Override
@@ -30,22 +36,22 @@ public class Oldman extends InheritMethod{
         if (!inv.lookingForItem("apple")) {
 
             say.narrate("Do you want to take this favor? [Y/N]", true, true);
-            System.out.print("[SELECT]"); scan.nextLine();String respond = scan.nextLine();
+            System.out.print("[SELECT]"); String respond = scan.nextLine();
 
             if (respond.equalsIgnoreCase("y")) {
                 if (Section1Rel[0] < 1) {
                     say.levelUp("Tree", "Climb");
                     Section1Rel[0] = 1;
                 }
-                setMission(1, 2);
+                setMission("Oldman's Apple");
             } else {
-                say.narrate("Oldman: Well too bad, come back if you hae the feeling to take my request.", true, true);
+                say.narrate("Oldman: Well too bad, come back if you have the feeling to take my request.", true, true);
                 System.out.println("[Click Enter]"); scan.nextLine();
             }
 
         } else {
             say.narrate("Oldman: Oh my, You have it! Thank you. Take this reward for a favor", 500, true, false);
-            missionComplete("", 10);
+            job.missionComplete("", 10);
             Section1Rel[1] = 1;
             say.levelUp("Oldman", "Willing to Help");
         }
@@ -72,11 +78,13 @@ public class Oldman extends InheritMethod{
                 say.levelUp("Worker", "Work");
                 Section3Rel[3] = 1;
             }
+
+
         } else {
-            say.narrate("Oldman: When i was a boy this plac was used to be mud and dirt.",true,true);
+            say.narrate("Oldman: When i was a boy this place was used to be mud and dirt.",true,true);
             System.out.print("[Click Enter]"); scan.nextLine();
 
-            say.narrate("Oldman: There was boys and cheerful chilfren throwing mud.",true,true);
+            say.narrate("Oldman: There was boys and cheerful children throwing mud.",true,true);
             System.out.print("[Click Enter]"); scan.nextLine();
 
             say.narrate("Oldman: Well the place was full of dirt, there was also trees and animals, they would roam around" +
@@ -100,16 +108,46 @@ public class Oldman extends InheritMethod{
     @Override
     void Lvl2() throws IOException, InterruptedException {
         if (inv.lookingForItem("Watering Can")){
-            say.narrate("Oldman: I would like to request a favor. Of course there's a reward.", true, true);
-            System.out.print("[Click Enter]"); scan.nextLine();
 
-            say.narrate("Do you want to take the Favor? [Y/N]", true, true);
-            System.out.print("[SELECT]"); String respond = scan.nextLine();
+            if (!MissionTitle.equalsIgnoreCase("Water my Babies")) {
+                say.narrate("Oldman: I would like to request a favor. Of course there's a reward.", true, true);
+                System.out.println("[Click Enter]");
+                scan.nextLine();
 
-            if(respond.equalsIgnoreCase("y")){
+                say.narrate("Do you want to take the Favor? [Y/N]", true, true);
+                System.out.println("[SELECT]");
+                String respond = scan.nextLine();
 
+                if (respond.equalsIgnoreCase("y")) {
+
+                    say.narrate("Oldman: Well i am blessed. I have this plants that i have been taking care since the beginning of this park.", true, true);
+                    System.out.print("[SELECT]");
+                    scan.nextLine();
+
+                    say.narrate("Oldman: Please take my place to water my plants for today.", true, true);
+                    System.out.print("[SELECT]");
+                    scan.nextLine();
+
+                    Section2Rel[3]= 1;
+                    setMission("Water my Babies");
+                    say.levelUp("Garden", "Water Plants");
+
+                }
+
+            } else if (MissionTitle.equalsIgnoreCase("Water my Babies") && status){
+                say.narrate("Oldman: Thank you for watering my can, Have this", true, true);
+                System.out.print("[SELECT]");
+                scan.nextLine();
+
+                job.missionComplete("Bone", 5);
             }
 
+        } else {
+            say.narrate("Oldman: I have been busy in my daily chores, and my back hurts", true, true);
+            System.out.print("[SELECT]"); scan.nextLine();
+
+            say.narrate("Oldman: I need someone who has a watering can to do my work for today.", true, true);
+            System.out.print("[SELECT]"); scan.nextLine();
         }
     }
 

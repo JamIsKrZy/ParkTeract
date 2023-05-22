@@ -10,7 +10,7 @@ public class loadStats {
     loadText say = new loadText();
     Inventory inv = new Inventory();
     static int Oclock; String morning = "am"; //0-24  just display with :00
-    static int Tick;
+    static int Tick = 50;
 
     public static int Money = 0;
 
@@ -20,7 +20,7 @@ public class loadStats {
     // [Boys, Bench, LuckyBox, Garden]
     static public int[] Section2Rel = {0,0,0,0};
 
-    // [PLayGround, Woman, Gaurd, Worker, Picnic]
+    // [PLayGround, Woman, Guard, Worker, Picnic]
     static public int[] Section3Rel = {0,0,0,0,0};
 
     // [VendingMachine, Cat, FoodStall, ClubHouse, Restroom]
@@ -28,9 +28,8 @@ public class loadStats {
 
     
 
-    public loadStats() throws InterruptedException {
-        inv.add("pen");
-        Tick = 50;
+    public loadStats() {
+
     }
 
     public void LoadSave(String Code){ //turn string to int
@@ -85,7 +84,7 @@ public class loadStats {
 
         int temptime = Oclock;
         if (Money){
-            say.narrate("Money = " + this.Money, false, false);
+            System.out.print("Money = " + loadStats.Money);
         }
         if (Time) {
             if (Oclock >= 12){
@@ -95,7 +94,7 @@ public class loadStats {
                 temptime = Oclock - 12;
                 
             }
-            say.narrate("\t\t\t\tTime : " + temptime +":00"+morning, false, true);
+            System.out.println("\t\t\t\tTime : " + temptime +":00"+morning);
 
             morning = "am";
         }
@@ -169,9 +168,9 @@ public class loadStats {
     public void setTime(int Time, boolean setToAddition) throws InterruptedException, IOException{
         if (setToAddition){
             Oclock += Time;
-            if ( Oclock > 24) {
+            if ( Oclock >= 24) {
 
-                say.narrate("Kelf went to sleep in the ground. Woke up in the next morning.", 3000, true, true);
+                say.narrate("Kelt went to sleep on the ground. Waking up in the next morning.", 3000, true, true);
 
                 Oclock = 6;
             }
@@ -179,6 +178,8 @@ public class loadStats {
             Oclock = Time;
         }
     }
+
+
 
 
 

@@ -13,6 +13,6 @@ public abstract class InheritMethod {
 
     abstract void Choice1() throws IOException, InterruptedException;
     abstract void Choice2() throws InterruptedException, IOException;
-    abstract void Choice3();
+    abstract void Choice3() throws IOException, InterruptedException;
     abstract void Choice4();
 }

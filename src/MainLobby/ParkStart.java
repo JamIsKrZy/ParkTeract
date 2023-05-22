@@ -1,5 +1,6 @@
 package MainLobby;
 //import java.util.*;
+import FunctionEtSystem.Inventory;
 import FunctionEtSystem.loadText;
 
 import java.io.IOException;
@@ -7,6 +8,7 @@ import java.io.IOException;
 public class ParkStart {
     loadText say = new loadText();
     MapLocate render = new MapLocate();
+    Inventory inv = new Inventory();
     
     
     public ParkStart(){
@@ -19,7 +21,10 @@ public class ParkStart {
         say.narrate("Explore the park and gather information to get home.", 2000, true, false);
 
         Interact start = new Interact("000000000000000000");
+
+        inv.add("Pen");
         start.nowWhat1();
+
         //now proccess on things to do
     }
 }
