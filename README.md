@@ -19,5 +19,9 @@ some information and people that would help you.
  **Note:** *When you try to open the Jar file, it wont open because this was made not for application.*
  *The runJar.bat is to execute the jar file into the command prompt*
  
-   ### Version Problem in Running the Program
+   ### Version Problem in Running the Program!
+   
+   
+   
+
  
