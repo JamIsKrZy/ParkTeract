@@ -1,4 +1,4 @@
-# ParkTeract 0.01
+# ParkTeract v0.01
 A text minigame only be run or executed in a Command Prompt. Your the main character of the story, named Kelt.
 You got lost in the park by some accidents. Find your way home on gathering 
 some information and people that would help you.
