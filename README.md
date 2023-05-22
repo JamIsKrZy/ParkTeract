@@ -5,7 +5,7 @@ some information and people that would help you.
 
 This is ran by Java 17.0.7
 
-*Author Biography:*
+*Author Biography:* (Still NEWBIE)
   - This is his first project in programming. There are some messed up codes when you look at it. :japanese_goblin:
   - He is still learning programming, starting with JAVA.
   - This project is full of JAVA codes.
