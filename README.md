@@ -26,10 +26,14 @@ Once done Donwloaded and Unzipped, do the Following:
    
    -''-'-'-'-'-'-'-'-'-''-'-'-'-'-''-'-'-
    
-#GAME PROGRESS :shipit:
+# GAME PROGRESS :shipit:
 :red_circle: Finished Characters (2/7)
+
 :orange_circle: Finished Places (1/10)
+
 :purple_circle: Finished System (75%)
+
+When Finished, will convert the .jar file into .exe
 
    
    
