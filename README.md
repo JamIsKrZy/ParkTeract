@@ -13,7 +13,7 @@ This is ran by Java 17.0.7
 
 ## How do I run this Game? 
  When you have downloaded this with a zip file. You Firstly need to Unzip it and find a location
- ![image](https://github.com/JamIsKrZy/ParkTeract/assets/113095674/2149f6c9-51c0-43c4-b57d-4fa5f00ed716)
+ 
 Once done Donwloaded and Unzipped, do the Following:
  1. Open the Project
  2. Go to [out] file >> [artifacts] file >> [ParkTeract_jar]
