@@ -24,6 +24,14 @@ Once done Donwloaded and Unzipped, do the Following:
  
    ### Version Problem in Running the Program!
    
+   -''-'-'-'-'-'-'-'-'-''-'-'-'-'-''-'-'-
+   
+#GAME PROGRESS :shipit:
+:red_circle: Finished Characters (2/7)
+:orange_circle: Finished Places (1/10)
+:purple_circle: Finished System (75%)
+
+   
    
    
 
