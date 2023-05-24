@@ -20,9 +20,11 @@ Once done Donwloaded and Unzipped, do the Following:
  3. once you are in the [ParkTeract_jar] directory, double click runJar.bat file
  
  **Note:** *When you try to open the Jar file, it wont open because this is not made for application.*
- *The runJar.bat is to execute the jar file into the command prompt*
+ *The runJar.bat is to execute the jar file into the command prompt.*
  
    ### Version Problem in Running the Program!
+   
+   https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
    
    -''-'-'-'-'-'-'-'-'-''-'-'-'-'-''-'-'-
    
