@@ -37,6 +37,16 @@ public class Dog extends InheritMethod{
     }
 
     @Override
+    void Lvl4() throws IOException, InterruptedException {
+
+    }
+
+    @Override
+    void Lvl5() throws IOException, InterruptedException {
+
+    }
+
+    @Override
     void randomEvent() throws IOException, InterruptedException {
 
     }

@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static FunctionEtSystem.carryMission.MissionTitle;
+import static FunctionEtSystem.carryMission.status;
 
 public class Worker extends InheritMethod{
     boolean newbie=true;
-    loadText say = new loadText();
+    loadText say;
     Scanner con = new Scanner(System.in);
-    Inventory inv = new Inventory();
-    carryMission job = new carryMission();
+    Inventory inv;
+    carryMission job;
     loadStats stats = new loadStats();
 
     String[] Action = {"Work", "Take Mission"};
@@ -105,7 +106,7 @@ public class Worker extends InheritMethod{
             System.out.println("[Click Enter]");
             con.nextLine();
 
-            newbie = false;
+            this.newbie = false;
         }
 
         say.narrate("Worker: Lets get working then", true, true);
@@ -154,6 +155,8 @@ public class Worker extends InheritMethod{
 
     @Override
     void Lvl2() throws IOException, InterruptedException { // Untold Business
+
+
         if (!MissionTitle.equalsIgnoreCase("Untold Business" ) && !inv.lookingForItem("Wrapped Box")){
             say.narrate("Worker: Right on time, i really need someone to pass this item to someone", true, true);
             System.out.println("[Click Enter]");
@@ -202,6 +205,18 @@ public class Worker extends InheritMethod{
             say.narrate("Worker: He is in the club. You can find him there.", true, true);
             System.out.println("[Click Enter]");
             con.nextLine();
+
+
+        } else if (MissionTitle.equalsIgnoreCase("Untold Business") && status){
+            say.narrate("Worker: Did you gave it to B.Henry? ", true, true);
+            System.out.println("[Click Enter]"); con.nextLine();
+
+            say.narrate("Worker: Good work, take this ", true, true);
+            System.out.println("[Click Enter]"); con.nextLine();
+
+            job.missionComplete("", 20);
+
+
         } else {
             say.narrate("Worker: Your still busy dumb ass", true,true);
             System.out.println("[Click Enter]");
@@ -209,8 +224,66 @@ public class Worker extends InheritMethod{
         }
     }
 
+
+    static int Timer;
     @Override
-    void Lvl3() { //Mysterious Box Mission
+    void Lvl3() throws IOException, InterruptedException { //Mysterious Box Mission
+        if(MissionTitle.isEmpty() && !inv.lookingForItem("Sealed Box")){
+            say.narrate("Worker: I need you right now, I can assure that i can trust you in this job.", true, true);
+            System.out.println("[Click Enter]");
+            con.nextLine();
+
+            say.narrate("Worker: I have this packed box, it needs to be delivered safely on time. if not your dead meat to me.", true, true);
+            System.out.println("[Click Enter]");
+            con.nextLine();
+
+            say.narrate("Worker: What would you say? [Y/N]", true, true);
+            System.out.println("[Click Enter]");
+            String respond = con.nextLine();
+
+            if (respond.equalsIgnoreCase("Y")){
+                say.narrate("Worker: Good, have this and make sure this must be buried in the Garden and no one must see it", true, true);
+                System.out.println("[Click Enter]");
+                con.nextLine();
+
+                say.narrate("Worker: And there is one that must know about this. The Gardener", true, true);
+                System.out.println("[Click Enter]");
+                con.nextLine();
+
+                say.narrate("Worker: Dont ask any questions. Just do your job.", true, true);
+
+                say.levelUp("Garden", "Dig");
+                inv.add("Sealed Box");
+                carryMission.setMission("Mysterious Box");
+
+            } else {
+                say.narrate("Worker: Sure, Sure, take your time and come back if you have the energy.", true, true);
+                System.out.println("[Click Enter]");
+                con.nextLine();
+
+            }
+
+        } else if (MissionTitle.equalsIgnoreCase("Mysterious Box") && status){
+            say.narrate("Worker: Well done, that's what i expect from you", true, true);
+            System.out.println("[Click Enter]");
+            con.nextLine();
+
+            job.missionComplete("", 20);
+
+        } else if (MissionTitle.equalsIgnoreCase("Mysterious Box") && inv.lookingForItem("Sealed Box")) {
+            say.narrate("Worker: As i said, hide it in the GARDEN.", true, true);
+            System.out.println("[Click Enter]");
+            con.nextLine();
+        }
+    }
+
+    @Override
+    void Lvl4() throws IOException, InterruptedException {
+
+    }
+
+    @Override
+    void Lvl5() throws IOException, InterruptedException {
 
     }
 

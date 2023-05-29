@@ -8,10 +8,10 @@ import static FunctionEtSystem.carryMission.*;
 import static FunctionEtSystem.loadStats.*;
 
 public class Oldman extends InheritMethod{
-    loadText say = new loadText();
+    loadText say ;
     Scanner scan = new Scanner(System.in);
-    Inventory inv = new Inventory();
-    carryMission job = new carryMission();
+    Inventory inv ;
+    carryMission job;
 
     public Oldman(){
 
@@ -153,6 +153,16 @@ public class Oldman extends InheritMethod{
 
     @Override
     void Lvl3() {
+
+    }
+
+    @Override
+    void Lvl4() throws IOException, InterruptedException {
+
+    }
+
+    @Override
+    void Lvl5() throws IOException, InterruptedException {
 
     }
 
