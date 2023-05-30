@@ -9,13 +9,13 @@ import java.util.Arrays;
 public class loadStats {
     loadText say = new loadText();
     Inventory inv = new Inventory();
-    static int Oclock; String morning = "am"; //0-24  just display with :00
-    static int Tick = 50;
+    public static int Oclock; String morning = "am";
+    static int Tick = 1;
 
     public static int Money = 0;
 
     // [Tree, Oldman, Bench, Dog]
-    static public int[] Section1Rel = {0,0,0,0};
+    static public int[] Section1Rel = {0,0,0,3};
 
     // [Boys, Bench, LuckyBox, Garden]
     static public int[] Section2Rel = {0,0,0,0};

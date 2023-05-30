@@ -2,12 +2,13 @@ package FunctionEtSystem;
 
 import java.io.IOException;
 
+import static FunctionEtSystem.loadStats.Section1Rel;
 
 
 public class loadText {
     int Tick;
     public loadText(){
-        Tick = 50;
+        Tick = 1;
     }
 
 
@@ -202,6 +203,119 @@ public class loadText {
             System.out.println("X--Oo---Oo---Oo---Oo---Oo-X");
         }
 
+    }
+
+    public void expBar(int exp, int max){
+        double perc=0;
+
+        perc = (double) exp / max;
+
+        if (perc >= 1){
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|████████████████████|");
+            System.out.println("'--------------------'");
+        } else if (perc >= 0.95) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|███████████████████ |");
+            System.out.println("'--------------------'");
+        } else if (perc >= 0.90) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|██████████████████  |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.85) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|█████████████████   |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.80) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|████████████████    |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.75) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|███████████████     |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.70) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|██████████████      |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.65) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|█████████████       |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.60) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|████████████        |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.55) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|███████████         |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.50) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|██████████          |");
+            System.out.println("'--------------------'");
+        } else if (perc >= 0.45) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|█████████           |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.40) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|████████            |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.35) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|███████             |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.30) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|██████              |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.25) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|█████               |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.20) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|████                |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.15) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|███                 |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.10) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|██                  |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0.05) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|█                   |");
+            System.out.println("'--------------------'");
+        }else if (perc >= 0 || perc <=0) {
+            System.out.println("      Exp: "+ exp);
+            System.out.println(",____________________.");
+            System.out.println("|                    |");
+            System.out.println("'--------------------'");
+        }
     }
 
 

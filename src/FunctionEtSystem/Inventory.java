@@ -45,17 +45,22 @@ public class Inventory {
     
     public void remove(String Item, boolean showinfo) throws InterruptedException {
         boolean notify = true;
+        boolean skip = false;
         for(int i = 0; i < pocket.length; i++){
             if (pocket[i].equalsIgnoreCase(Item)){
                 pocket[i] = "";
                 notify = false;
-                
+                skip = true;
                 if (showinfo) {
                     System.out.println("Successfully removed " + Item + " in the Inventory");
-
                 }
 
-            } 
+                break;
+            }
+
+            if (skip){
+                break;
+            }
         }
         
         if(notify){

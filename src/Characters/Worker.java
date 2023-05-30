@@ -10,10 +10,10 @@ import static FunctionEtSystem.carryMission.status;
 
 public class Worker extends InheritMethod{
     boolean newbie=true;
-    loadText say;
+    loadText say = new loadText();
     Scanner con = new Scanner(System.in);
-    Inventory inv;
-    carryMission job;
+    Inventory inv = new Inventory();
+    carryMission job = new carryMission();
     loadStats stats = new loadStats();
 
     String[] Action = {"Work", "Take Mission"};
@@ -84,7 +84,7 @@ public class Worker extends InheritMethod{
 
     // Need to make an optional to work or other Matters
     @Override
-    void Lvl0() throws IOException, InterruptedException {
+    void Lvl0() throws InterruptedException, IOException {
         say.narrate("Worker: HEY! stay back! Contruction is ongoing here.", true, true);
         System.out.println("[Click Enter]"); con.nextLine();
 
@@ -238,7 +238,7 @@ public class Worker extends InheritMethod{
             con.nextLine();
 
             say.narrate("Worker: What would you say? [Y/N]", true, true);
-            System.out.println("[Click Enter]");
+            System.out.println("[SELECT]");
             String respond = con.nextLine();
 
             if (respond.equalsIgnoreCase("Y")){

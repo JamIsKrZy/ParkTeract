@@ -8,10 +8,10 @@ import static FunctionEtSystem.carryMission.*;
 import static FunctionEtSystem.loadStats.*;
 
 public class Oldman extends InheritMethod{
-    loadText say ;
+    loadText say = new loadText();
     Scanner scan = new Scanner(System.in);
-    Inventory inv ;
-    carryMission job;
+    Inventory inv = new Inventory();
+    carryMission job = new carryMission();
 
     public Oldman(){
 
@@ -20,7 +20,7 @@ public class Oldman extends InheritMethod{
 
 
     @Override
-    int availAction(int lvl) throws IOException, InterruptedException {
+    int availAction(int lvl) {
         return 0;
     }
 
@@ -121,11 +121,11 @@ public class Oldman extends InheritMethod{
                 if (respond.equalsIgnoreCase("y")) {
 
                     say.narrate("Oldman: Well i am blessed. I have this plants that i have been taking care since the beginning of this park.", true, true);
-                    System.out.print("[SELECT]");
+                    System.out.print("[Click Enter]");
                     scan.nextLine();
 
                     say.narrate("Oldman: Please take my place to water my plants for today.", true, true);
-                    System.out.print("[SELECT]");
+                    System.out.print("[Click Enter]");
                     scan.nextLine();
 
                     Section2Rel[3]= 1;
@@ -136,7 +136,7 @@ public class Oldman extends InheritMethod{
 
             } else if (MissionTitle.equalsIgnoreCase("Water my Babies") && status){
                 say.narrate("Oldman: Thank you for watering my can, Have this", true, true);
-                System.out.print("[SELECT]");
+                System.out.print("[Click Enter]");
                 scan.nextLine();
 
                 job.missionComplete("Bone", 5);
@@ -144,10 +144,10 @@ public class Oldman extends InheritMethod{
 
         } else {
             say.narrate("Oldman: I have been busy in my daily chores, and my back hurts", true, true);
-            System.out.print("[SELECT]"); scan.nextLine();
+            System.out.print("[Click Enter]"); scan.nextLine();
 
             say.narrate("Oldman: I need someone who has a watering can to do my work for today.", true, true);
-            System.out.print("[SELECT]"); scan.nextLine();
+            System.out.print("[Click Enter]"); scan.nextLine();
         }
     }
 

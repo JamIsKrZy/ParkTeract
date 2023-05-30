@@ -64,6 +64,8 @@ public class Interact {
             say.LineBLine("([MENU] - Setting)");
             say.narrate("Select: ", false, false);
             action = con.next();
+
+
             action = action.toUpperCase();
 
             switch (section) {
@@ -94,7 +96,7 @@ public class Interact {
                 }
                 p++;
             }
-        
+
 
             if (action.equals("GOTO")){
                 
@@ -104,6 +106,8 @@ public class Interact {
             } else {
                 nowWhat1();
             }
+        } catch (NoSuchElementException e){
+            nowWhat1();
         }
     }
 

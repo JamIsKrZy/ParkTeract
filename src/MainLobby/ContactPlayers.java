@@ -16,7 +16,7 @@ public class ContactPlayers {
     public String[] S4 = {"VENDINGMACHINE", "CAT", "FOODSTALL", "CLUBHOUSE", "RESTROOM"};
 
     // Character availability to interact
-    Boolean[] A1 = {true, true, false, false};
+    Boolean[] A1 = {true, true, false, true};
     Boolean[] A2 = {false, false, false, true};
     Boolean[] A3 = {false, false, false, true, false};
     Boolean[] A4 = {false, false, false, false, true};
