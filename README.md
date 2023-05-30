@@ -43,7 +43,6 @@ Once done Donwloaded and Unzipped, do the Following:
    9. Click Ok until you have exited the System Properties.
    10. Go to Command Prompt, then type "java -version". This will show that you Java have set up correctly.
    
-   -''-'-'-'-'-'-'-'-'-''-'-'-'-'-''-'-'-
    
 # GAME PROGRESS :shipit:
 :red_circle: Finished Characters (3/7)
