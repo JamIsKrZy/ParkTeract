@@ -29,11 +29,33 @@ Once done Donwloaded and Unzipped, do the Following:
    -''-'-'-'-'-'-'-'-'-''-'-'-'-'-''-'-'-
    
 # GAME PROGRESS :shipit:
-:red_circle: Finished Characters (2/7)
+:red_circle: Finished Characters (3/7)
+  - [:heavy_check_mark:] Oldman 
+  - [:heavy_check_mark:] Dog 
+  - [:x:] Boys 
+  - [:x:] Woman 
+  - [:x:] Guard 
+  - [:heavy_check_mark:] Worker 
+  - [:x:] Cat 
 
-:orange_circle: Finished Places (1/10)
+:orange_circle: Finished Places (2/11)
+  - [:heavy_check_mark:] Tree 
+  - [:heavy_check_mark:] Bench 
+  - [:x:] Trash-Bin 
+  - [:x:] LuckyBox 
+  - [:x:] Garden 
+  - [:x:] PlayGround 
+  - [:x:] Picnic
+  - [:x:] Vending Machine
+  - [:x:] Food Stall
+  - [:x:] Clubhouse
+  - [:x:] Restroom
 
 :purple_circle: Finished System (75%)
+  
+  Added Feature:
+  - Added Exp Bar on Progressive Characters
+  - Added a game Mechanic on Dog Level 3 :boomerang:
 
 When Finished, will convert the .jar file into .exe
 
