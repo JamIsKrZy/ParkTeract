@@ -24,7 +24,24 @@ Once done Donwloaded and Unzipped, do the Following:
  
    ### Version Problem in Running the Program!
    
-   https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+   Opening the jar file into the command prompt but you encountered and error about out dated Version.
+   
+   If you already have a Java JRE/JDK in your Desktop but still encounter an error, you should update your Java version to JDK 17 and above, by doing so, delete/uninstall your current Java Version and do the Following Process below.
+   
+   If you do not have a Java JRE/JDK in your desktop. Follow the given step below.
+   
+   Downloading JDK 17 and Above are the Following:
+   1. Go to https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+      This link will lead you to Oracle Website and look for Version JDK 17 and download.
+   2. Once finished downloading, go to your file explorer, then install the JDK 17 in your desktop.
+   3. After installing, Go to your file explorer and follow: This PC => Local Disk (C:) => Program Files => Java => jdk-17 => bin. (if you cant see jdk-17, maybe you havent fully installized the Java)
+   4. Copy the File Directory (Ex. C:\Program Files\Java\jdk-17\bin). 
+   5. Go to your System Environment Variable/System Properties.
+   6. Click Environment Variables...
+   7. In the Environment Variables Tab, double click "Path".
+   8. Click "new", then paste the copied file direcotry of your Java Bin.
+   9. Click Ok until you have exited the System Properties.
+   10. Go to Command Prompt, then type "java -version". This will show that you Java have set up correctly.
    
    -''-'-'-'-'-'-'-'-'-''-'-'-'-'-''-'-'-
    
@@ -55,7 +72,7 @@ Once done Donwloaded and Unzipped, do the Following:
   
   Added Feature:
   - Added Exp Bar on Progressive Characters
-  - Added a game Mechanic on Dog Level 3 :boomerang:
+  - Added a Game Feature on Dog Level 3 :boomerang:
 
 When Finished, will convert the .jar file into .exe
 
