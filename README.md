@@ -3,13 +3,16 @@ A text minigame only be run or executed in a Command Prompt. Your the main chara
 You got lost in the park by some accidents. Find your way home on gathering 
 some information and people that would help you.
 
+
 This is ran by Java 17.0.7
 
 *Author Biography:* (Still NEWBIE)
   - This is his first project in programming. There are some messed up codes when you look at it. :japanese_goblin:
   - He is still learning programming, starting with JAVA.
   - This project is full of JAVA codes.
-  - Still doing his best to wide his knowledge and capabilities. 
+  - Still doing his best to wide his knowledge and capabilities.
+
+[I had to stop on this project so that i can move on to learn other fundamentals in programming]
 
 ## How do I run this Game? 
  When you have downloaded this with a zip file. You Firstly need to Unzip it and find a location
